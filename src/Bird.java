@@ -11,11 +11,10 @@ class Bird {
         x = (width - sizeBird) / 2;
         y = (height - sizeBird) / 2;
     }
-
     void start() {
         if (jump) {
-            y -= dy;
             dy -= 1;
+            y -= dy;
             if (dy < -50) {
                 jump = false;
                 dy = 0;

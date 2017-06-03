@@ -21,7 +21,7 @@ class MainPanel extends JPanel {
 //        column = new Column(getWidth(),getHeight());
 
         try {
-            birdIMG = ImageIO.read(new File("GUIAPP\\background\\flappyBird.png"));
+            birdIMG = ImageIO.read(new File("C:\\Users\\Денис\\FlappyBird\\FlappyBird.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ class MainPanel extends JPanel {
 
         addKeyListener(keyListener);
         ActionListener timerListener = e ->{
-            bird.jump();
+            bird.start();
             repaint();
         };
 

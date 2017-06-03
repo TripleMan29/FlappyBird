@@ -14,6 +14,6 @@ public class Frame extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Frame("myFirstGUIApplication"));
+        SwingUtilities.invokeLater(() -> new Frame("Flappy Bird"));
     }
 }
