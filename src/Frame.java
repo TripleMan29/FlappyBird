@@ -1,8 +1,8 @@
 import javax.swing.*;
 
 public class Frame extends JFrame {
-    private static final int DEFAULT_WIDTH = 700;
-    private static final int DEFAULT_HEIGHT = 750;
+    public static final int DEFAULT_WIDTH = 700;
+    public static final int DEFAULT_HEIGHT = 750;
 
     private Frame(String title) {
         super(title);

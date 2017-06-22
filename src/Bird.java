@@ -1,37 +1,38 @@
 import java.awt.*;
 
 class Bird {
-    private int x, y;
-    private int dy = 0;
+    private int y;
+    final static int sizeBird = 50;
+    final static int x = (Frame.DEFAULT_WIDTH - sizeBird) / 2 - 75;;
+    private int ymotion = 0;
 
     private boolean jump = false;
-    private final static int sizeBird = 50;
 
-    Bird(int width, int height) {
-        x = (width - sizeBird) / 2;
+
+    Bird(int height) {
+
         y = (height - sizeBird) / 2;
     }
     void start() {
         if (jump) {
-            dy -= 1;
-            y -= dy;
-            if (dy < -50) {
+            ymotion -= 1;
+            y += ymotion;
+            if (ymotion < 0) {
                 jump = false;
-                dy = 0;
+                ymotion = -12;
             }
         } else {
-            dy += 1;
-            y += dy;
+            ymotion += 1;
+            y += ymotion;
+
         }
     }
 
     void jump() {
+        ymotion = 0;
         jump = true;
     }
 
-    int getX() {
-        return x;
-    }
 
     int getY() {
         return y;
