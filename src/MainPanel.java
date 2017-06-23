@@ -116,7 +116,7 @@ class MainPanel extends JPanel {
         g2D.setColor(Color.YELLOW);
         if (!gameOver) {
             if (started)
-                g2D.drawString(String.valueOf(score), Frame.DEFAULT_WIDTH / 2, 70);
+                g2D.drawString(String.valueOf(score), Frame.DEFAULT_WIDTH / 2, 90);
             else
                 g2D.drawString("Press space to play", Frame.DEFAULT_WIDTH / 2 - 180, 160);
         }
@@ -140,22 +140,20 @@ class MainPanel extends JPanel {
     private void paintColumns(Graphics2D g2D){
         g2D.setColor(Color.gray);
         for(Column element: columns){
-
             g2D.drawImage(building, element.getx(), 0, Column.widthColumn, element.getY2(), null);
             g2D.drawImage(building, element.getx(), element.getY3(), Column.widthColumn, Frame.DEFAULT_HEIGHT - element.getY3(), null);
-
         }
     }
 
     private void isGameOver(){
         for (Column element: columns) {
-            //       if (element.getY2() == 0 && bird.getX() + Bird.sizeBird/2 > element.getx() + Column.widthColumn/2 - 10 && bird.getX() + Bird.sizeBird/2 < element.getx() + Column.widthColumn/2 + 10){
-            //           score++;
-            //           System.out.println(score);
-            if ((Bird.x + Bird.sizeBird > element.getx() && Bird.x + 5 < element.getx() + Column.widthColumn && (bird.getY() + 5 < element.getY2() || bird.getY() - 5 + Bird.sizeBird > element.getY3()))  || bird.getY() + Bird.sizeBird - 5 > Frame.DEFAULT_HEIGHT - 125 ) {
+            if ((Bird.x + Bird.sizeBird > element.getx() && Bird.x + 5 < element.getx() + Column.widthColumn &&
+                    (bird.getY() + 5 < element.getY2() || bird.getY() - 5 + Bird.sizeBird > element.getY3()))
+                    || bird.getY() + Bird.sizeBird - 5 > Frame.DEFAULT_HEIGHT - 125 ) {
                 gameOver = true;
             }
-            else if(Bird.x + Bird.sizeBird == element.getx() && bird.getY() + 5 > element.getY2() && bird.getY() - 5 + Bird.sizeBird < element.getY3()) {
+            else if(Bird.x + Bird.sizeBird == element.getx() && bird.getY() + 5 > element.getY2() &&
+                    bird.getY() - 5 + Bird.sizeBird < element.getY3()) {
                 score++;
             }
         }
