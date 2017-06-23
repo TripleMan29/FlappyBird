@@ -98,9 +98,9 @@ class MainPanel extends JPanel {
 
         g2D.drawImage(background, 0, 0, null);
 
-        g2D.drawImage(birdIMG, Bird.x, bird.getY(), null);
-
         paintColumns(g2D);
+
+        g2D.drawImage(birdIMG, Bird.x, bird.getY(), null);
 
         g2D.setColor(Color.BLACK);
         g2D.fillRect(0, Frame.DEFAULT_HEIGHT - 120, Frame.DEFAULT_WIDTH, 100);
