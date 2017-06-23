@@ -1,16 +1,10 @@
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Random;
 
 class Column {
-    private Random random;
-    private static int rnd1, rnd2;
+    private static int rnd1;
 
     private int y2, y3, x;
-    public final static int space = 300;
-    public final static int widthColumn = 100;
-    public final static int heightColumn = 375;
-   // private int heightColumn;
+    final static int widthColumn = 100;
 
 
     Column(){
@@ -20,8 +14,8 @@ class Column {
     }
 
     private void changeColumn() {
-        for (int i = 0; i < 5; i++) {
-            rnd2 = new Random().nextInt(4);
+        for (int i = 0; i < 6; i++) {
+            int rnd2 = new Random().nextInt(4);
             if (rnd1 != rnd2) {
                 rnd1 = rnd2;
                 break;
@@ -30,7 +24,7 @@ class Column {
 
         switch (rnd1) {
             case 0:
-                y2 = 50;
+                y2 = 100;
 
                 break;
             case 1:
@@ -49,7 +43,7 @@ class Column {
     }
 
 
-    public void move() {
+    void move() {
         if (x < -100){
             changeColumn();
             x = Frame.DEFAULT_WIDTH + 400;
@@ -57,7 +51,7 @@ class Column {
         x -= 8;
     }
 
-    public void setX(int x) {
+    void setX(int x) {
         this.x = x;
     }
 

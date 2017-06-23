@@ -1,15 +1,16 @@
 import javax.swing.*;
 
 public class Frame extends JFrame {
-    public static final int DEFAULT_WIDTH = 700;
-    public static final int DEFAULT_HEIGHT = 750;
+    static final int DEFAULT_WIDTH = 700;
+    static final int DEFAULT_HEIGHT = 750;
 
     private Frame(String title) {
         super(title);
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-        MainPanel mainPanel = new MainPanel(DEFAULT_WIDTH,DEFAULT_HEIGHT);
-        add(mainPanel);
+        add(new MainPanel());
         setVisible(true);
+        setResizable(false);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
