@@ -20,7 +20,7 @@ class MainPanel extends JPanel {
 
     MainPanel() {
 
-        file = new File("C:\\Users\\Денис\\FlappyBird\\bestScore.txt");
+        file = new File("bestScore.txt");
         maxScore = readScore();
         score = 0;
         bird = new Bird();
@@ -31,9 +31,9 @@ class MainPanel extends JPanel {
         }
 
         try {
-            birdIMG = ImageIO.read(new File("C:\\Users\\Денис\\FlappyBird\\sprites\\FlappyBird.png"));
-            building = ImageIO.read(new File("C:\\Users\\Денис\\FlappyBird\\sprites\\Building1.png"));
-            background = ImageIO.read(new File("C:\\Users\\Денис\\FlappyBird\\sprites\\city.png"));
+            birdIMG = ImageIO.read(new File("sprites\\FlappyBird.png"));
+            building = ImageIO.read(new File("sprites\\Building1.png"));
+            background = ImageIO.read(new File("sprites\\city.png"));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,9 +41,6 @@ class MainPanel extends JPanel {
         setFocusable(true);
 
 
-        /**/
-        setBackground(Color.cyan);
-        /**/
 
         KeyListener  keyListener = new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
